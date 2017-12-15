@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                        http://www.springframework.org/schema/tx
+                        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+                        http://www.springframework.org/schema/cache
+                        http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
+    <tx:annotation-driven transaction-manager="transactionManager2" />
+	<!-- 数据源居家服务数据库 -->
+	<bean id="sqlSessionFactory2" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<description>spring和MyBatis完美整合，不需要mybatis的配置映射文件</description>
+		<property name="dataSource" ref="dataSource2" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<!-- 自动扫描mapping.xml文件 -->
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:mapper/hr/*.xml</value>
+				<value>classpath:mapper/metrore/*.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<description>DAO接口所在包名，Spring会自动查找其下的类</description>
+		<property name="basePackage" value="org.fiberhome.metrorec.web.mapper.metrore" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory2" />
+	</bean>
+	
+
+	<!-- 事务 -->
+	<bean id="transactionManager2"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource2" />
+	</bean>
+	
+
+	<!-- 数据源 社区服务数据库 -->
+	<!--  
+	<bean id="sqlSessionFactory3" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<description>spring和MyBatis完美整合，不需要mybatis的配置映射文件</description>
+		<property name="dataSource" ref="dataSource3" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:mapper/govt/**/*.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<description>DAO接口所在包名，Spring会自动查找其下的类</description>
+		<property name="basePackage" value="org.fiberhome.cmt.dao.govt" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory3" />
+	</bean>
+	事务 
+	<bean id="transactionManager3"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource3" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager3" />-->
+
+	<!-- 视频、音频 -->
+	<!-- 数据源 社区服务数据库 -->
+	<!-- <bean id="sqlSessionFactory-opr" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
+	<!-- <description>spring和MyBatis完美整合，不需要mybatis的配置映射文件</description> -->
+	<!-- <property name="dataSource" ref="dataSource-opr" /> -->
+	<!-- <property name="configLocation" value="classpath:mybatis-config.xml" 
+		/> -->
+	<!--自动扫描mapping.xml文件 -->
+	<!-- <property name="mapperLocations" value="classpath:mapper/opr/**/*.xml" 
+		/> -->
+	<!-- </bean> -->
+	<!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> -->
+	<!-- <description>DAO接口所在包名，Spring会自动查找其下的类</description> -->
+	<!-- <property name="basePackage" value="org.fiberhome.cmt.dao.opr" /> -->
+	<!-- <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory-opr" 
+		/> -->
+	<!-- </bean> -->
+	<!-- 事务 -->
+	<!-- <bean id="transactionManager-opr" -->
+	<!-- class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> -->
+	<!-- <property name="dataSource" ref="dataSource-opr"/> -->
+	<!-- </bean> -->
+	<!-- <tx:annotation-driven transaction-manager="transactionManager-opr"/> -->
+</beans>

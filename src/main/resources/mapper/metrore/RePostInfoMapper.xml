@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.fiberhome.metrorec.web.mapper.metrore.RePostInfoMapper" >
+  <resultMap id="BaseResultMap" type="org.fiberhome.metrorec.web.model.metrore.RePostInfo" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="UUID" property="uuid" jdbcType="VARCHAR" />
+    <result column="RECRUIT_TYPE" property="recruitType" jdbcType="CHAR" />
+    <result column="POST_TYPE_1" property="postType1" jdbcType="VARCHAR" />
+    <result column="POST_TYPE_2" property="postType2" jdbcType="VARCHAR" />
+    <result column="POST_NAME" property="postName" jdbcType="VARCHAR" />
+    <result column="WORK_PLACE" property="workPlace" jdbcType="VARCHAR" />
+    <result column="RECRUIT_NUM" property="recruitNum" jdbcType="DECIMAL" />
+    <result column="WORK_EXPERIENCE" property="workExperience" jdbcType="CHAR" />
+    <result column="EDUCATION" property="education" jdbcType="CHAR" />
+    <result column="POST_DESCRIPTION" property="postDescription" jdbcType="VARCHAR" />
+    <result column="POST_REQUIRE" property="postRequire" jdbcType="VARCHAR" />
+    <result column="RELEASE_DATE" property="releaseDate" jdbcType="TIMESTAMP" />
+    <result column="DEADLINE_DATE" property="deadlineDate" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="IS_LIMIT" property="isLimit" jdbcType="CHAR" />
+    <result column="LIMIT_NUM" property="limitNum" jdbcType="DECIMAL" />
+    <result column="STATUS" property="status" jdbcType="CHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.fiberhome.metrorec.web.mapper.metrore.RePostTypeMapper" >
+  <resultMap id="BaseResultMap" type="org.fiberhome.metrorec.web.model.metrore.RePostType" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="UUID" property="uuid" jdbcType="VARCHAR" />
+    <result column="TYPE_NAME" property="typeName" jdbcType="VARCHAR" />
+    <result column="TYPE_ORDER" property="typeOrder" jdbcType="DECIMAL" />
+    <result column="TYPE_LEVEL" property="typeLevel" jdbcType="CHAR" />
+    <result column="PARENT_GUID" property="parentGuid" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>
